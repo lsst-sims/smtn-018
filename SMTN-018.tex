@@ -1,0 +1,36 @@
+\documentclass[modern]{aastex62}
+
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+
+
+\newcommand{\docRef}{SMTN-018}
+\newcommand{\docUpstreamLocation}{\url{https://github.com/lsst-sims/smtn-018}}
+
+
+\begin{document}
+\input{authors}
+\date{\today}
+\title{Satellite Mega Constellations}
+\hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+\input{abstract}
+
+\input{body}
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\bibliographystyle{yahapj}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+
+\end{document}
