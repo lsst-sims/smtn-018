@@ -1,8 +1,8 @@
 \section{Introduction}
 
-Throughout this paper we consider a Gen 2 Starlink satellite constellation as in \citet{Hu2022}. This constellation has 30,000 satellites in altitudes ranging from 340 to 614 km. 
+Throughout this paper we consider a Gen 2 Starlink satellite constellation as in \citet{Hu2022}. This constellation has 30,000 satellites in altitudes ranging from 340 to 614 km. We pair that with the pointing history generated in the baseline 3.0 survey cadence simulation. This survey simulation has 2.08 million visits and includes high airmass visits in twilight time to search for inner solar system objects.
 
-This is the LSST overview paper: \cite{2008arXiv0805.2366I}.
+% This is the LSST overview paper: \cite{2008arXiv0805.2366I}.
 
 
 
@@ -32,17 +32,26 @@ We can consider a ``worst-case" scenario that if a visit contains a satellite st
 
 In Figure~\ref{fig:depth_change}, we show the result for rejecting snaps with streaks for the first year of the baseline v3.0 survey in $r$. 
 
-For this subset of exposures ($r$ band in the first year, only 30s visits so no twilight NEO observations), we find that of the 44,000 visits, 5\% would be streaked by an illuminated satellite. A large portion of the sky would be unaffected, with the mean change in coadded depth being 0.011 mags. 
+For this subset of exposures ($r$ band in the first year, only 30s visits so no twilight NEO observations), we find that of the 44,000 visits, 5\% would be streaked by an illuminated satellite. The majority of the sky would be unaffected, with the mean change in coadded depth being 0.011 mags. 
 
 \begin{figure}
 \plottwo{plots/no_streak_map.pdf}{plots/streaked_map.pdf}
 \plottwo{plots/mag_diff_map.pdf}{plots/mag_diff_hist.pdf}
-\caption{ \label{fig:depth_change}}
+\caption{ Top Left: Coadded depth in $r$ after 1 year with no streak losses. Top Right: Coadded depth in $r$\ where snaps with streaks have been excluded. Bottom Left: Difference between the top images. Bottom Right: Histogram of the depth differences. \label{fig:depth_change}}
 \end{figure}
 
 
 
 \section{Solar System Impact}
-
+% origianlly from repo at https://github.com/yoachim/22_Scratch/tree/main/neo_check
 
 We can check how satellites could impact discovery of solar system objects. 
+
+We use a sample of 10k objects in Vatira-like orbits an find which objects could potentially be observed in the 10 year LSST survey. We then see which observations would intersect with Starlink streaks. For a 10 arcminute wide streak we find 5.7\% of the Vatira objects would hit a streak, and for a 1 arcminute wide streak 0.53\% of Vatira observations would hit a streak.
+
+The Vatiras are the most sensitive to satellite streaks. When we repeat the experiment for PHA NEOs, only 0.07\% of potential observations are lost to a 1 arcminute streak. 
+
+Note that these losses do not directly translate to losses in object identification, e.g., if there are 10 observations of an object, and one is lost to a satellite streak, we will probably still be able to fit it's orbit. 
+
+
+
