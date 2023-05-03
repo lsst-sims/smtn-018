@@ -1,9 +1,36 @@
 \section{Introduction}
 
-{\bf Put your paper here }
-\vskip 0.4in
+We construct a Gen 2 Starlink satellite constellation as in \citet{Hu2022}. xxx-basic stats of the constellation.
 
+
+
+\section{Pixel Impact}
+
+After year 1, 8\% of images would be streaked. Per image, the mean streak length comes to 15.3 arcmin, so a 60 arcsecond streak mask would result in 0.04\% of pixels peing lost.
+
+
+
+
+
+\subsection{Toss a Snap}
+
+We can consider a ``worst-case" scenario that if a visit contains a satellite streak, then that snap with the streak is discarded and a visit is reduced to a single 15s exposure rather than two 15s exposures. This would result in the 5-$\sigma$\ limiting depth being 0.37 mags shallower than if there was no streak.
+
+In Figure~\ref{fig:depth_change}, we show the result for rejecting snaps with streaks for the first year of the baseline v3.0 survey in $r$. 
+
+For this subset of exposures ($r$ band in the first year, only 30s visits so no twilight NEO observations), we find that of the 44,000 visits, 5\% would be streaked by an illuminated satellite. A large portion of the sky would be unaffected, with the mean change in coadded depth being 0.011 mags. 
+
+\begin{figure}
+\plottwo{plots/no_streak_map.pdf}{plots/streaked_map.pdf}
+\plottwo{plots/mag_diff_map.pdf}{plots/mag_diff_hist.pdf}
+\caption{ \label{fig:depth_change}}
+\end{figure}
+
+
+
+\section{Solar System Impact}
 
 
 This is the LSST overview paper: \cite{2008arXiv0805.2366I}.
 
+First paper on satellites \citet{Hu2022}
