@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Throughout this paper we consider a Gen 2 Starlink satellite constellation as in \citet{Hu2022}. This constellation has 30,000 satellites in altitudes ranging from 340 to 614 km. We pair that with the pointing history generated in the baseline 3.0 survey cadence simulation. This survey simulation has 2.08 million visits and includes high airmass visits in twilight time to search for inner solar system objects.
+Throughout this paper we consider a Gen 2 Starlink satellite constellation as in \citet{Hu2022}. This constellation has 30,000 satellites in altitudes ranging from 340 to 614 km. We pair that with the pointing history generated in the baseline 3.0 survey cadence simulation. This 10 year survey simulation has 2.08 million visits and includes high airmass visits in twilight time to search for inner solar system objects.
 
 % This is the LSST overview paper: \cite{2008arXiv0805.2366I}.
 
@@ -8,17 +8,18 @@ Throughout this paper we consider a Gen 2 Starlink satellite constellation as in
 
 \section{Pixel Impact}
 
-After year 1, 8\% of all images would have at least one streak from the constellation. Per image, the mean streak length comes to 15.3 arcmin, so a 1 arcmin streak mask would results in 0.04\% of pixels being lost (assuming 0.2 arcsec per pixel and 3.2 Gpixels per visit).
+After year 1, 8\% of all visits would have at least one streak from the constellation. Per image, the mean streak length comes to 15.3 arcmin, so a 1 arcmin streak mask would results in 0.04\% of all pixels being lost (assuming 0.2 arcsec per pixel and 3.2 Gpixels per visit).
 
 Some of the most impacted observations are the high airmass observations taken in twilight to detect inner solar system objects. These visits consist of single 15s snaps. Table~\ref{table:pixel} breaks down the impact of streaks for twilight and non-twilight NEO visits. 
 
 \begin{table}
-\begin{tabular}{ l  l  l l}
-  visits & N visits & streaked & pixels lost \\
+\begin{tabular}{ l  c  c c}
+  visits & N visits & at least  & total pixels lost \\
+  & & one streak & with 1 arcmin mask \\
   \hline			
   all & 216120 & 8.4\%  & 0.043\% \\
-  non-twilight & 210679 & 7.4\% &  0.039\% \\
-  twilight NEO & 5441 & 45.7\% & 0.19\% \\
+  2x15s & 210679 & 7.4\% &  0.039\% \\
+  1x15s (twilight NEO)  & 5441 & 45.7\% & 0.19\% \\
   \hline  
   \label{table:pixel}
  % 
@@ -28,7 +29,7 @@ Some of the most impacted observations are the high airmass observations taken i
 
 \subsection{Toss a Snap}
 
-We can consider a ``worst-case" scenario that if a visit contains a satellite streak, then that snap with the streak is discarded and a visit is reduced to a single 15s exposure rather than two 15s exposures. This would result in the 5-$\sigma$\ limiting depth being 0.37 mags shallower than if there was no streak.
+We can consider a ``worst-case" scenario that if a visit contains a satellite streak, then the snap with the streak is completely discarded and the visit is reduced to a single 15s exposure rather than two 15s exposures. This would result in the 5-$\sigma$\ limiting depth being 0.37 mags shallower than if there was no streak.
 
 In Figure~\ref{fig:depth_change}, we show the result for rejecting snaps with streaks for the first year of the baseline v3.0 survey in $r$. 
 
@@ -47,9 +48,9 @@ For this subset of exposures ($r$ band in the first year, only 30s visits so no 
 
 We can check how satellites could impact discovery of solar system objects. 
 
-We use a sample of 10k objects in Vatira-like orbits an find which objects could potentially be observed in the 10 year LSST survey. We then see which observations would intersect with Starlink streaks. For a 10 arcminute wide streak we find 5.7\% of the Vatira objects would hit a streak, and for a 1 arcminute wide streak 0.53\% of Vatira observations would hit a streak.
+We use a sample of 10k objects in Vatira-like orbits and find which objects could potentially be observed in the 10 year LSST survey. We then check which of those Vatira detections would intersect with Starlink streaks. For an extremely large 10 arcmin wide streak mask we find 5.7\% of the Vatira objects would hit a streak, and for a (still generous) 1 arcmin wide streak mask 0.53\% of Vatira observations would hit a streak (6,117 Vatira potential observations drops to 6,068). 
 
-The Vatiras are the most sensitive to satellite streaks. When we repeat the experiment for PHA NEOs, only 0.07\% of potential observations are lost to a 1 arcminute streak. 
+The Vatiras are the most sensitive to satellite streaks. When we repeat the experiment for PHA NEOs, only 0.07\% of potential detections are lost to a 1 arcmin streak. 
 
 Note that these losses do not directly translate to losses in object identification, e.g., if there are 10 observations of an object, and one is lost to a satellite streak, we will probably still be able to fit it's orbit. 
 
