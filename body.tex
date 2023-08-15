@@ -13,14 +13,14 @@ Throughout this paper we consider a Gen 2 Starlink satellite constellation as in
 
 \begin{figure}
 \plotone{plots/mean_streak_hist.pdf}
-\caption{Mean number of streaks as a fucntion of observing night and sun altitude. \label{fig:streak_hist_2}}
+\caption{Mean number of streaks as a function of observing night and sun altitude. White vertical streaks are caused by weather and downtime. \label{fig:streak_hist_2}}
 \end{figure}
 
 \section{Pixel Impact}
 
 After year 1, 8\% of all visits would have at least one streak from the constellation. Per image, the mean streak length comes to 15.3 arcmin, so a 1 arcmin streak mask would results in 0.04\% of all pixels being lost (assuming 0.2 arcsec per pixel and 3.2 Gpixels per visit).
 
-Some of the most impacted observations are the high airmass observations taken in twilight to detect inner solar system objects. These visits consist of single 15s snaps. Table~\ref{table:pixel} breaks down the impact of streaks for twilight and non-twilight NEO visits. 
+Some of the most impacted observations are the high airmass observations taken in twilight to detect inner solar system objects. These visits consist of single 15s snaps. Table~\ref{table:pixel} breaks down the impact of streaks for twilight and non-twilight NEO visits. We expect the total pixels lost to scale with the size of the satellite constellation as well as with the streak mask width, with brighter satellites potentially needing larger masks. Note the number of visits with at least one streak does not scale with constellation size, as the Starlink constellation is in a relatively low orbit so the satellites are in earth's shadow for most of the night. Figure~\ref{fig:streak_hist_2} shows that images are only streaked when the sun is higher than $-30^\circ$\ altitude.
 
 \begin{table}
 \begin{tabular}{ l  c  c c}
@@ -58,7 +58,7 @@ For this subset of exposures ($r$ band in the first year, only 30s visits so no 
 
 We can check how satellites could impact discovery of solar system objects. 
 
-We use a sample of 10k objects in Vatira-like orbits and find which objects could potentially be observed in the 10 year LSST survey. We then check which of those Vatira detections would intersect with Starlink streaks. For an extremely large 10 arcmin wide streak mask we find 5.7\% of the Vatira objects would hit a streak, and for a (still generous) 1 arcmin wide streak mask 0.53\% of Vatira observations would hit a streak (6,117 Vatira potential observations drops to 6,068). 
+We use a sample of 10k objects in Vatira-like orbits (objects interior to the orbit of Venus) and find which objects could potentially be observed in the 10 year LSST survey. We then check which of those Vatira detections would intersect with Starlink streaks. For an extremely large 10 arcmin wide streak mask we find 5.7\% of the Vatira objects would hit a streak, and for a (still generous) 1 arcmin wide streak mask 0.53\% of Vatira observations would hit a streak (6,117 Vatira potential observations drops to 6,068). 
 
 The Vatiras are the most sensitive to satellite streaks. When we repeat the experiment for PHA NEOs, only 0.07\% of potential detections are lost to a 1 arcmin streak. 
 
