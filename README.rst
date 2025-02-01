@@ -3,6 +3,10 @@
 .. image:: https://github.com/lsst-sims/smtn-018/workflows/CI/badge.svg
    :target: https://github.com/lsst-sims/smtn-018/actions/
 
+
+[![DOI](https://zenodo.org/badge/635502244.svg)](https://doi.org/10.5281/zenodo.14783622)
+
+
 #############################
 Satellite Mega Constellations
 #############################
