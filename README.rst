@@ -4,7 +4,7 @@
    :target: https://github.com/lsst-sims/smtn-018/actions/
 
 .. image:: https://zenodo.org/badge/635502244.svg
-  :target: https://doi.org/10.5281/zenodo.14783622
+   :target: https://doi.org/10.5281/zenodo.14783622
 
 
 #############################
